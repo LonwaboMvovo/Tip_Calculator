@@ -4,8 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Tip Calculator</h1>
+
+    <section>
+        <label for="num_ppl">Number of people:</label>
+        <input id='num_ppl' type="text" value="1">
+    </section>
+
+    <section>
+        <label for="bill">Bill:</label>
+        <span>R</span> <input id='bill' type="text">
+    </section>
+
+    <section>
+        <label for="tip_perc">Tip:</label>
+        <input id='tip_perc' type="text"> <span>%</span>
+    </section>
+
+    <section>
+        <h3>Tip amount:</h3>
+        <h3 id="tip"></h3>
+
+        <h3>Total:</h3>
+        <h3 id="total"></h3>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
