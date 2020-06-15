@@ -11,13 +11,16 @@ const pp_box = document.querySelector('#pp_box');
 const tip_pp = document.querySelector('#tip_pp');
 const total_pp = document.querySelector('#total_pp');
 
+const short_box = document.querySelector('#short_box');
+const short = document.querySelector('#short');
+
 let tip_display;
 let total_display;
 let tip_pp_display;
 let total_pp_display;
 
 const moneyDisplay = () => {
-    if (num_ppl.value > 1) {
+    if (parseInt(num_ppl.value) > 1) {
         split_even_box.className = '';
         pp_box.className = '';
     } else {
@@ -32,10 +35,21 @@ const moneyDisplay = () => {
         total.textContent = 'R' + total_display.toFixed(2);
 
         if (split_even.checked) {
-            tip_pp_display = tip_display / parseFloat(num_ppl.value);
-            total_pp_display = total_display / parseFloat(num_ppl.value);
+            tip_pp_display = tip_display / parseInt(num_ppl.value);
+            total_pp_display = total_display / parseInt(num_ppl.value);
             tip_pp.textContent = 'R' + tip_pp_display.toFixed(2);
             total_pp.textContent = 'R' + total_pp_display.toFixed(2);
+
+            let short_display = total_display.toFixed(2) - total_pp_display.toFixed(2) * parseInt(num_ppl.value);
+            if (short_display > 0) {
+                short_box.className = '';
+                short.textContent = 'R' + short_display.toFixed(2);
+            } else if (short_display < 0) {
+                short_box.className = 'nope';
+                total.textContent = `R${total_display.toFixed(2) * 1 + short_display.toFixed(2) * -1}`;
+            } else {
+                short_box.className = 'nope';
+            }
         }
     } else {
         tip.textContent = '';
