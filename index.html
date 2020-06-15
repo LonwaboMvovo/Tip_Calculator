@@ -14,6 +14,11 @@
         <input id='num_ppl' type="text" value="1">
     </section>
 
+    <section id='split_even_box' class="nope">
+        <label for="split_even">Split evenly?</label>
+        <input id='split_even' type="checkbox">
+    </section>
+
     <section>
         <label for="bill">Bill:</label>
         <span>R</span> <input id='bill' type="text">
@@ -21,7 +26,7 @@
 
     <section>
         <label for="tip_perc">Tip:</label>
-        <input id='tip_perc' type="text"> <span>%</span>
+        <input id='tip_perc' type="text" value="15"> <span>%</span>
     </section>
 
     <section>
@@ -30,6 +35,14 @@
 
         <h3>Total:</h3>
         <h3 id="total"></h3>
+    </section>
+
+    <section id='pp_box' class="nope">
+        <h3>Tip per person:</h3>
+        <h3 id="tip_pp"></h3>
+
+        <h3>Total per person:</h3>
+        <h3 id="total_pp"></h3>
     </section>
 
     <script src="script.js"></script>
